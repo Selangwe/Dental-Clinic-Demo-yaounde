@@ -7,7 +7,8 @@
     "dev": "node dev.mjs",
     "build": "python build.py",
     "clean": "python build.py --clean",
-    "serve": "node dev.mjs"
+    "serve": "node dev.mjs",
+    "build:demo": "python build.py --demo"
   },
   "engines": {
     "node": ">=18"

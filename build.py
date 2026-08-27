@@ -25,6 +25,9 @@ import shutil
 import sys
 from pathlib import Path
 
+# Mis a True par --demo : marque toutes les pages en noindex.
+DEMO = False
+
 ROOT = Path(__file__).parent
 SRC = ROOT / "src"
 SITE = "https://dentist237.com"
@@ -133,9 +136,10 @@ def render(meta: dict, layout: str, sprite: str, footer: str) -> str:
     html = html.replace("{{DESC}}", meta["desc"])
     html = html.replace("{{URL}}", url)
     html = html.replace("{{OGTYPE}}", meta.get("ogtype", "website"))
+    noindex = DEMO or meta.get("noindex")
     html = html.replace(
         "{{ROBOTS}}",
-        '<meta name="robots" content="noindex,follow">' if meta.get("noindex") else "",
+        '<meta name="robots" content="noindex,follow">' if noindex else "",
     )
 
     active = meta.get("nav", "")
@@ -144,7 +148,34 @@ def render(meta: dict, layout: str, sprite: str, footer: str) -> str:
             "{{NAV_" + key + "}}",
             ' aria-current="page" class="is-active"' if key == active else "",
         )
-    return html
+
+    return relativise(html, url)
+
+
+# Les pages sont ecrites avec des chemins absolus (/soins/, /styles.css) :
+# c'est lisible dans les sources. Mais un site servi depuis un sous-chemin
+# — GitHub Pages sert un depot projet sous /nom-du-depot/ — casse alors
+# tous les liens et toutes les feuilles de style.
+#
+# Plutot que de coder en dur un prefixe (qui casserait le serveur de dev,
+# lui servi depuis la racine), on convertit a la generation chaque chemin
+# absolu en chemin relatif a la page courante. Le resultat fonctionne
+# partout : file://, localhost:5173, /Dental-Clinic-Demo-yaounde/, et la
+# racine de dentist237.com.
+ABS_REF_RE = re.compile(r'(href|src)="/([^"]*)"')
+
+
+def relativise(html: str, url: str) -> str:
+    depth = len([p for p in url.strip("/").split("/") if p])
+    prefix = "../" * depth
+
+    def swap(m: re.Match) -> str:
+        attr, path = m.group(1), m.group(2)
+        if not path:                      # href="/" -> racine du site
+            return f'{attr}="{prefix or "./"}"'
+        return f'{attr}="{prefix}{path}"'
+
+    return ABS_REF_RE.sub(swap, html)
 
 
 def build_quartiers() -> list[dict]:
@@ -209,7 +240,14 @@ def sitemap(urls: list[str]) -> str:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--clean", action="store_true", help="supprime les dossiers generes")
+    ap.add_argument("--demo", action="store_true",
+                    help="deploiement de demonstration : noindex sur toutes les pages, "
+                         "pour qu une copie publique du site ne concurrence pas "
+                         "dentist237.com dans les resultats de recherche")
     args = ap.parse_args()
+
+    global DEMO
+    DEMO = args.demo
 
     generated_dirs = ["soins", "tarifs", "urgences", "cabinets", "contact",
                       "rendez-vous", "a-propos", "yaounde", "mentions-legales"]
@@ -230,6 +268,8 @@ def main() -> None:
         target = out_path(meta["url"])
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(render(meta, layout, sprite, footer), encoding="utf-8")
+        # Le sitemap reste complet meme en mode demo : c est la balise
+        # noindex qui pilote l indexation, pas le sitemap.
         if not meta.get("noindex"):
             indexable.append(meta["url"])
         print(f"  {meta['url']:<42} -> {target.relative_to(ROOT)}")
@@ -240,6 +280,7 @@ def main() -> None:
     if src404.exists():
         (ROOT / "404.html").write_text(src404.read_text(encoding="utf-8"), encoding="utf-8")
 
+    (ROOT / ".nojekyll").write_text("", encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(sitemap(indexable), encoding="utf-8")
     (ROOT / "robots.txt").write_text(
         f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8"
