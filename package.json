@@ -1,0 +1,15 @@
+{
+  "name": "dentist237-v2",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Site dentist237.com — cabinet dentaire à Yaoundé. HTML statique assemblé par build.py.",
+  "scripts": {
+    "dev": "node dev.mjs",
+    "build": "python build.py",
+    "clean": "python build.py --clean",
+    "serve": "node dev.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

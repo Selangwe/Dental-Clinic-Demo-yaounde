@@ -1,0 +1,132 @@
+[
+  {
+    "slug": "mfandena",
+    "nom": "Mfandena",
+    "meta": "Dentiste à Mfandena, Yaoundé. Le cabinet dentist237 est situé face à l'Omnisport, dans le quartier. Consultation 15 000 FCFA, urgences, RDV WhatsApp.",
+    "intro": "Mfandena est le quartier du cabinet. dentist237 se trouve Avenue Charles de Gaulle, juste en face du complexe sportif Omnisport — vous n'avez pas à quitter le quartier pour vous faire soigner.",
+    "acces": "Le cabinet est dans Mfandena même. Depuis n'importe quel point du quartier, dirigez-vous vers l'Avenue Charles de Gaulle : nous sommes en face de l'entrée du complexe Omnisport.",
+    "axe": "Avenue Charles de Gaulle",
+    "reperes": [
+      "Complexe sportif Omnisport — le cabinet est juste en face",
+      "Avenue Charles de Gaulle, axe principal du quartier",
+      "Accessible à pied depuis la majeure partie de Mfandena"
+    ]
+  },
+  {
+    "slug": "bastos",
+    "nom": "Bastos",
+    "meta": "Dentiste pour Bastos, Yaoundé. Cabinet dentist237 à Omnisport-Mfandena, accès direct depuis Bastos. Consultation 15 000 FCFA, urgences, RDV WhatsApp.",
+    "intro": "Bastos accueille une grande partie des ambassades et des résidences diplomatiques de Yaoundé. Le cabinet dentist237 reçoit régulièrement des patients de ce quartier, à quelques minutes de route vers le sud-est.",
+    "acces": "Depuis Bastos, descendez vers le carrefour Nlongkak puis prenez la direction de l'Omnisport par l'Avenue Charles de Gaulle. Le cabinet est en face du complexe sportif.",
+    "axe": "Bastos → Nlongkak → Avenue Charles de Gaulle",
+    "reperes": [
+      "Descente depuis le quartier des ambassades",
+      "Passage par le carrefour Nlongkak",
+      "Arrivée face au complexe Omnisport"
+    ]
+  },
+  {
+    "slug": "odza",
+    "nom": "Odza",
+    "meta": "Dentiste pour Odza, Yaoundé. Cabinet dentist237 à Omnisport-Mfandena. Un second cabinet est prévu à Odza en 2027. Consultation 15 000 FCFA, urgences.",
+    "intro": "Odza se situe au sud-est de Yaoundé, sur l'axe de l'aéroport de Nsimalen. Les patients d'Odza sont aujourd'hui reçus au cabinet d'Omnisport-Mfandena. Un second cabinet dentist237 est envisagé à Odza pour 2027.",
+    "acces": "Depuis Odza, remontez vers le centre par l'axe de Nsimalen, puis rejoignez l'Avenue Charles de Gaulle en direction de l'Omnisport.",
+    "axe": "Odza → axe Nsimalen → centre → Omnisport",
+    "reperes": [
+      "Axe de l'aéroport de Nsimalen",
+      "Second cabinet dentist237 envisagé ici en 2027",
+      "Trajet à anticiper aux heures de pointe"
+    ]
+  },
+  {
+    "slug": "etoudi",
+    "nom": "Etoudi",
+    "meta": "Dentiste pour Etoudi, Yaoundé. Cabinet dentist237 à Omnisport-Mfandena, accès direct depuis Etoudi. Consultation 15 000 FCFA, urgences, RDV WhatsApp.",
+    "intro": "Etoudi, au nord de Yaoundé, est connu pour le palais présidentiel. Le cabinet dentist237 est accessible depuis Etoudi en descendant vers le carrefour de l'Omnisport.",
+    "acces": "Depuis Etoudi, prenez la direction du centre-ville et rejoignez l'Avenue Charles de Gaulle. Le cabinet se trouve face à l'Omnisport.",
+    "axe": "Etoudi → centre → Avenue Charles de Gaulle",
+    "reperes": [
+      "Descente depuis le nord de la ville",
+      "Axe direct vers le carrefour Omnisport",
+      "Stationnement possible à proximité du cabinet"
+    ]
+  },
+  {
+    "slug": "mvog-ada",
+    "nom": "Mvog-Ada",
+    "meta": "Dentiste pour Mvog-Ada, Yaoundé. Cabinet dentist237 à Omnisport-Mfandena, tout proche. Consultation 15 000 FCFA, urgences, RDV WhatsApp.",
+    "intro": "Mvog-Ada est l'un des quartiers les plus proches du cabinet. C'est aussi l'un de ceux d'où viennent le plus régulièrement nos patients, notamment pour les urgences.",
+    "acces": "Depuis Mvog-Ada, le cabinet est à courte distance : rejoignez l'Avenue Charles de Gaulle en direction de l'Omnisport.",
+    "axe": "Mvog-Ada → Avenue Charles de Gaulle",
+    "reperes": [
+      "Quartier voisin du cabinet",
+      "Trajet court, pratique en cas de rage de dent",
+      "Accessible en taxi partagé"
+    ]
+  },
+  {
+    "slug": "nlongkak",
+    "nom": "Nlongkak",
+    "meta": "Dentiste pour Nlongkak, Yaoundé. Cabinet dentist237 à Omnisport-Mfandena via le carrefour Nlongkak. Consultation 15 000 FCFA, urgences, RDV WhatsApp.",
+    "intro": "Le carrefour Nlongkak est l'un des points de passage les plus fréquentés de Yaoundé. Le cabinet dentist237 se trouve à courte distance, en direction de l'Omnisport.",
+    "acces": "Depuis le carrefour Nlongkak, prenez l'Avenue Charles de Gaulle en direction de l'Omnisport. Le cabinet est en face du complexe.",
+    "axe": "Carrefour Nlongkak → Avenue Charles de Gaulle",
+    "reperes": [
+      "Carrefour Nlongkak comme point de repère",
+      "Axe direct vers le cabinet",
+      "Desservi par de nombreuses lignes de taxi"
+    ]
+  },
+  {
+    "slug": "mvan",
+    "nom": "Mvan",
+    "meta": "Dentiste pour Mvan, Yaoundé. Cabinet dentist237 à Omnisport-Mfandena, accès depuis Mvan. Consultation 15 000 FCFA, urgences, RDV WhatsApp.",
+    "intro": "Mvan, au sud de Yaoundé, est un quartier d'activité et de passage vers Douala. Les patients de Mvan rejoignent le cabinet en remontant vers le centre.",
+    "acces": "Depuis Mvan, remontez vers le centre-ville, puis rejoignez l'Avenue Charles de Gaulle en direction de l'Omnisport.",
+    "axe": "Mvan → centre → Omnisport",
+    "reperes": [
+      "Axe sud de la ville",
+      "Trajet à anticiper aux heures de pointe",
+      "Rendez-vous en début de matinée conseillé"
+    ]
+  },
+  {
+    "slug": "biyem-assi",
+    "nom": "Biyem-Assi",
+    "meta": "Dentiste pour Biyem-Assi, Yaoundé. Cabinet dentist237 à Omnisport-Mfandena. Consultation 15 000 FCFA, urgences, Mobile Money, RDV WhatsApp.",
+    "intro": "Biyem-Assi est l'un des quartiers les plus peuplés de Yaoundé. Le cabinet dentist237 y reçoit régulièrement des familles, notamment pour les soins des enfants.",
+    "acces": "Depuis Biyem-Assi, rejoignez le centre-ville puis l'Avenue Charles de Gaulle en direction de l'Omnisport.",
+    "axe": "Biyem-Assi → centre → Omnisport",
+    "reperes": [
+      "Quartier du sud-ouest de Yaoundé",
+      "Soins de l'enfant dès 3 ans au cabinet",
+      "Paiement Orange Money et MTN MoMo acceptés"
+    ]
+  },
+  {
+    "slug": "mendong",
+    "nom": "Mendong",
+    "meta": "Dentiste pour Mendong, Yaoundé. Cabinet dentist237 à Omnisport-Mfandena. Consultation 15 000 FCFA, urgences, paiement échelonné, RDV WhatsApp.",
+    "intro": "Mendong, dans le sud-ouest de Yaoundé, est un quartier résidentiel en forte croissance. Le trajet vers le cabinet passe par le centre-ville.",
+    "acces": "Depuis Mendong, prenez la direction du centre puis l'Avenue Charles de Gaulle vers l'Omnisport.",
+    "axe": "Mendong → centre → Omnisport",
+    "reperes": [
+      "Quartier résidentiel du sud-ouest",
+      "Paiement échelonné possible pour les gros traitements",
+      "Prendre rendez-vous à l'avance sur WhatsApp"
+    ]
+  },
+  {
+    "slug": "nkolbisson",
+    "nom": "Nkolbisson",
+    "meta": "Dentiste pour Nkolbisson, Yaoundé. Cabinet dentist237 à Omnisport-Mfandena. Consultation 15 000 FCFA, urgences, RDV WhatsApp.",
+    "intro": "Nkolbisson se situe à l'ouest de Yaoundé, sur la sortie vers Douala. C'est l'un des quartiers les plus éloignés du cabinet : mieux vaut caler le rendez-vous à l'avance.",
+    "acces": "Depuis Nkolbisson, rejoignez le centre-ville par l'axe ouest, puis l'Avenue Charles de Gaulle en direction de l'Omnisport.",
+    "axe": "Nkolbisson → axe ouest → centre → Omnisport",
+    "reperes": [
+      "Sortie ouest de Yaoundé",
+      "Quartier le plus éloigné du cabinet",
+      "Confirmer le créneau sur WhatsApp avant de se déplacer"
+    ]
+  }
+]

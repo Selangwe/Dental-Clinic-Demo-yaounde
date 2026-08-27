@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+<link rel="canonical" href="https://dentist237.com{{URL}}">
+<meta name="theme-color" content="#0C1E33">
+{{ROBOTS}}
+<meta property="og:type" content="{{OGTYPE}}">
+<meta property="og:locale" content="fr_CM">
+<meta property="og:site_name" content="dentist237">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESC}}">
+<meta property="og:url" content="https://dentist237.com{{URL}}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Hanken+Grotesk:wght@400;500;600;700&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Aller au contenu</a>
+
+{{SPRITE}}
+
+<!-- ============ Barre utilitaire ============ -->
+<div class="util">
+  <div class="wrap">
+    <span class="util-item hide-s">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-pin"/></svg>
+      Av. Charles de Gaulle · face Omnisport-Mfandena, Yaoundé V
+    </span>
+    <span class="util-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-clock"/></svg>
+      Lun–Sam 8h–20h · Dim 9h–13h
+    </span>
+    <a class="util-item" href="tel:+237694885836">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>
+      +237 694 88 58 36
+    </a>
+  </div>
+</div>
+
+<!-- ============ En-tête ============ -->
+<header class="head" id="head">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="dentist237 — accueil">
+      <svg class="brand-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-tooth"/></svg>
+      <span class="brand-word">dentist<em>237</em></span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="/cabinets/"{{NAV_cabinets}}>Le cabinet</a>
+      <a href="/soins/"{{NAV_soins}}>Soins</a>
+      <a href="/tarifs/"{{NAV_tarifs}}>Tarifs</a>
+      <a href="/urgences/"{{NAV_urgences}}>Urgences</a>
+      <a href="/a-propos/"{{NAV_apropos}}>À propos</a>
+      <a href="/contact/"{{NAV_contact}}>Contact</a>
+    </nav>
+
+    <a class="btn btn--wa btn--sm head-cta" href="/rendez-vous/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wa"/></svg>
+      <span>Prendre RDV</span>
+    </a>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Ouvrir le menu">
+      <i></i><i></i><i></i>
+    </button>
+  </div>
+</header>
+
+<nav class="drawer" id="drawer" aria-label="Menu mobile">
+  <a href="/cabinets/" style="--i:0">Le cabinet</a>
+  <a href="/soins/" style="--i:1">Soins</a>
+  <a href="/tarifs/" style="--i:2">Tarifs</a>
+  <a href="/urgences/" style="--i:3">Urgences</a>
+  <a href="/a-propos/equipe/" style="--i:4">Notre équipe</a>
+  <a href="/contact/" style="--i:5">Contact</a>
+  <a href="/rendez-vous/" style="--i:6">Prendre rendez-vous</a>
+  <div class="drawer-foot">
+    <a class="btn btn--wa btn--sm" href="https://wa.me/237694885836?text=Bonjour%2C%20je%20souhaite%20prendre%20rendez-vous." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wa"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <a class="btn btn--light btn--sm" href="tel:+237694885836"><span>+237 694 88 58 36</span></a>
+  </div>
+</nav>
+
+<main id="main">
+{{CONTENT}}
+</main>
+
+{{FOOTER}}
+
+<a class="wa-fab" href="https://wa.me/237694885836?text=Bonjour%2C%20je%20souhaite%20prendre%20rendez-vous." target="_blank" rel="noopener" aria-label="Prendre rendez-vous sur WhatsApp">
+  <b>Prendre RDV</b>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-wa"/></svg>
+</a>
+
+<script type="application/ld+json">
+{{JSONLD}}
+</script>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
