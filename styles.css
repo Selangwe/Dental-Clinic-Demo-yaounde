@@ -153,8 +153,19 @@ p:last-child{ margin-bottom:0; }
 .util-item svg{ width:12px; height:12px; color:var(--gold-l); flex:none; }
 .util a{ transition:color .3s var(--ease); }
 .util a:hover{ color:var(--gold-l); }
-.util .hide-s{ display:none; }
-@media(min-width:800px){ .util .hide-s{ display:flex; } }
+/* L'adresse n'apparait qu'a partir de 1000px : entre 800 et ~950px, les
+   trois elements en white-space:nowrap depassaient la largeur du wrap et
+   provoquaient un debordement horizontal de la page entiere.
+   min-width:0 + ellipsis servent de garde-fou aux largeurs intermediaires. */
+.util-item{ min-width:0; }
+/* Sur telephone il ne reste que le numero : horaires et adresse sont en
+   nowrap et, a deux, depassaient deja 360px de large. Les horaires
+   restent visibles dans l'en-tete de page et dans le pied. */
+.util .hide-xs{ display:none; }
+@media(min-width:560px){ .util .hide-xs{ display:flex; } }
+.util .hide-s{ display:none; overflow:hidden; text-overflow:ellipsis; }
+@media(min-width:1000px){ .util .hide-s{ display:flex; } }
+@media(max-width:559px){ .util .wrap{ justify-content:center; } }
 
 /* ---------- 6. En-tête ---------- */
 .head{
@@ -412,6 +423,7 @@ section{ position:relative; }
 
 /* ---------- 14. Tarifs — la carte ---------- */
 .tarifs-grid{ display:grid; gap:clamp(2.5rem,5vw,4rem); }
+.tarifs-grid > *{ min-width:0; }
 @media(min-width:1000px){ .tarifs-grid{ grid-template-columns:1fr 1.25fr; align-items:start; } }
 .price-list{ list-style:none; margin:0; padding:0; border-top:1px solid var(--ink-faint); }
 .price-row{
@@ -419,7 +431,12 @@ section{ position:relative; }
   border-bottom:1px solid var(--ink-hair); transition:background .35s var(--ease), padding .35s var(--ease);
 }
 .price-row:hover{ background:rgba(242,227,194,.42); padding-left:.7rem; }
-.price-row dt{ font-size:.985rem; font-weight:600; letter-spacing:-.01em; white-space:nowrap; }
+/* nowrap uniquement au-dessus de 560px : un libelle long
+   ("Devitalisation (traitement de canal)") force sinon la min-content
+   width de la colonne de grille, qui ne peut plus retrecir sous 360px
+   et fait deborder toute la page. */
+.price-row dt{ font-size:.985rem; font-weight:600; letter-spacing:-.01em; }
+@media(min-width:560px){ .price-row dt{ white-space:nowrap; } }
 .price-row .dots{ flex:1; border-bottom:1px dotted var(--ink-faint); transform:translateY(-.28em); min-width:1.5rem; }
 .price-row dd{
   margin:0; font-family:var(--mono); font-size:.82rem; font-weight:500;
@@ -657,7 +674,11 @@ section{ position:relative; }
 .pill--price{ border-color:var(--gold); color:var(--gold); }
 
 /* ---- Article + colonne latérale ---- */
+/* min-width:0 sur les enfants : sans cela une piste 1fr refuse de
+   descendre sous la min-content de son contenu (tableaux, mono, nowrap)
+   et deborde au lieu de retrecir. */
 .split{ display:grid; gap:clamp(2.5rem,5vw,4rem); align-items:start; }
+.split > *{ min-width:0; }
 @media(min-width:980px){ .split{ grid-template-columns:minmax(0,1fr) 340px; } }
 
 .aside{ position:static; display:grid; gap:1.25rem; }

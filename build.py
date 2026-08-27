@@ -25,7 +25,10 @@ import shutil
 import sys
 from pathlib import Path
 
-# Mis a True par --demo : marque toutes les pages en noindex.
+# Mode demo : noindex sur toutes les pages. Il se lit dans package.json
+# ("demo": true) plutot que de dependre d un drapeau en ligne de commande —
+# sinon le serveur de dev, qui lance build.py sans arguments a chaque
+# sauvegarde, ecrase silencieusement une generation faite avec --demo.
 DEMO = False
 
 ROOT = Path(__file__).parent
@@ -240,6 +243,9 @@ def sitemap(urls: list[str]) -> str:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--clean", action="store_true", help="supprime les dossiers generes")
+    ap.add_argument("--no-demo", action="store_true",
+                    help="force la generation de production meme si package.json "
+                         "porte \"demo\": true")
     ap.add_argument("--demo", action="store_true",
                     help="deploiement de demonstration : noindex sur toutes les pages, "
                          "pour qu une copie publique du site ne concurrence pas "
@@ -247,7 +253,8 @@ def main() -> None:
     args = ap.parse_args()
 
     global DEMO
-    DEMO = args.demo
+    cfg = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
+    DEMO = args.demo or (cfg.get("demo", False) and not args.no_demo)
 
     generated_dirs = ["soins", "tarifs", "urgences", "cabinets", "contact",
                       "rendez-vous", "a-propos", "yaounde", "mentions-legales"]

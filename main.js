@@ -118,5 +118,16 @@
 
   form.addEventListener('input', sync);
   form.addEventListener('change', sync);
+
+  /* La soumission GET encode les espaces en "+" (x-www-form-urlencoded).
+     wa.me attend un parametre d'URL : on construit donc le lien nous-memes
+     avec encodeURIComponent. Sans JS, la soumission GET reste le repli. */
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    sync();
+    var url = 'https://wa.me/237694885836?text=' + encodeURIComponent(hidden.value);
+    window.open(url, '_blank', 'noopener');
+  });
+
   sync();
 })();
